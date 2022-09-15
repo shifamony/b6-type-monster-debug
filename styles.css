@@ -10,7 +10,38 @@ body {
   background-position: left top;
   font-family: "Zilla Slab", serif;
 }
+/*============ HEADER STYLE START ================*/
+header nav#mynavs{
+  background-color: green;
+  width: 100%;
+  height: 70px;
 
+}
+header nav#mynavs ul{
+  list-style: none;
+  justify-content: center;
+  display: flex;
+  
+}
+header nav#mynavs ul li{
+  display: flex;
+ 
+}
+header nav#mynavs ul li a{
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  justify-content: center;
+  padding: 20px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  transition: all .5s;
+}
+header nav#mynavs ul li a:hover{
+  color:#eb6565;
+
+}
+/*============ HEADER STYLE END ================*/
 .box-container {
   width: 70%;
   margin: 0 auto;
@@ -185,7 +216,7 @@ button {
   
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 576px) {
   .box-container {
     padding: 0 20px;
     width: 100%;
@@ -193,13 +224,20 @@ button {
   .card {
     flex-direction: column;
   }
-  #histories{
-    grid-template-columns:repeat(1,1fr);
-  }
+  
 }
-@media only screen and (max-width: 1000px) and (min-width: 700px){
+@media only screen and (man-width: 768px){
   #histories{
-    grid-template-columns: repeat(2, 1fr);
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap:0.5rem;
+    grid-row-gap:0.5rem;
+    justify-items: stretch;
+    align-items: stretch;
+    padding: 20px 30px;
+  }
+  .card{
+    flex-direction: column;
   }
   
 }
