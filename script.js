@@ -48,7 +48,7 @@ const typeController = (e) => {
   if (newLetterCorrect) {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
   } else {
-    display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
+    display.innerHTML += `<span class="red">${newLetter === " " ? "?" : newLetter}</span>`;
     errorCount++;
   }
 
@@ -84,7 +84,7 @@ const gameOver = () => {
   // show result
   resultModal.innerHTML += `
     <h1>Finished!</h1>
-    <p>You took: <span class="bold">${parseInt(timeTaken)}</span> seconds</p>
+    <p>You took: <span class="bold">${timeTaken}</span> seconds</p>
     <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
     <button onclick="closeModal()">Close</button>
   `;
@@ -96,11 +96,11 @@ const gameOver = () => {
   errorCount = 0;
   userText = "";
   display.classList.add("inactive");
-  //display.classList.remove("inactive");
+  
 };
 
 const closeModal = () => {
-  modalBackground.classList.toggle("visible");
+  modalBackground.classList.toggle("hidden");
   resultModal.classList.toggle("hidden");
 };
 
@@ -131,6 +131,8 @@ console.log(countdownOverlay)
     }
     count--;
   }, 1000);
+
+  countdownOverlay.innerHTML = ``;
 };
 
 // START Countdown
@@ -145,10 +147,9 @@ setInterval(() => {
   const timeSpent = Math.round((currentTime - startTime) / 1000);
 
   
-  //const showTimeParse = parseInt(showTime);
+  
   showTime.innerHTML = `${startTime ? timeSpent : 0} seconds`;
 }, 1000);
 
 
 
-//mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
