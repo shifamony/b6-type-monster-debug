@@ -226,7 +226,7 @@ button {
   }
   
 }
-@media only screen and (man-width: 768px){
+@media only screen and (min-width: 768px){
   #histories{
     display:grid;
     grid-template-columns: repeat(3, 1fr);
